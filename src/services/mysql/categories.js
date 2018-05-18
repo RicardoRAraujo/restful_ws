@@ -35,7 +35,6 @@ const categories = deps => {
             errorHandler(error, `Falha ao atualizar a categoria ${name}`, reject)
             return false
           }
-          console.log(results)
           resolve({ category: { name, id }, affectedRows: results.affectedRows })
         })
       })
