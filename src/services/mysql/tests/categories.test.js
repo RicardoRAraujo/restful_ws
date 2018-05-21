@@ -13,19 +13,19 @@ test.serial('Lista de categoria', async t => {
   t.is(list.categories[0].name, 'category-test')
 })
 
-test('Criação de categoria', async t => {
+test.serial('Criação de categoria', async t => {
 	const result = await create()
   t.is(result.category.name, 'category-test')
 })
 
-test('Atualização de categoria', async t => {
+test.serial('Atualização de categoria', async t => {
 	await create()
   const updated = await categories.update(1, 'category-test-updated')
   t.is(updated.category.name, 'category-test-updated')
   t.is(updated.affectedRows, 1)
 })
 
-test('Remoção de categoria', async t => {
+test.serial('Remoção de categoria', async t => {
   await create()
   const removed = await categories.del(1)
   t.is(removed.affectedRows, 1)
